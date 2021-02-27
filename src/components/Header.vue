@@ -42,7 +42,7 @@ export default {
   display: flex;
   margin: 0 auto 45px auto;
   justify-content: space-between;
-  padding-bottom: 24px;
+  padding: 24px 0 24px 0;
   border-bottom: 1px solid #E1E1E1;
 }
 .nav-list {
@@ -70,7 +70,6 @@ export default {
 }
 .justify-between {
   display: flex;
-  margin: 0 auto;
 }
 .logo {
   width: 48px;

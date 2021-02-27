@@ -2,15 +2,70 @@
   <section class="main">
     <h1 class="title">Картины эпохи Возрождения</h1>
     <div class="cards">
-  
+      <Card
+        v-for="art in arts"
+        :image="art.image"
+        :title="art.title"
+        :key="art.id"
+      />
     </div>
+    <slot></slot>
   </section>
 </template>
 
 <script>
+import Card from "./Card";
+
 export default {
   name: "Cards",
-  components: {},
+  components: { Card },
+  data() {
+    return {
+      arts: [
+        {
+          title: "«Рождение Венеры» Сандро Боттичелли",
+          id: 1,
+          image: "../assets/images/Adam.png",
+          oldPrice: 2000000,
+          actualPrice: 1000000,
+          sale: true,
+          quantity: 1,
+        },
+        {
+          title: "«Тайная вечеря»  Леонардо да Винчи",
+          id: 2,
+          image: "../assets/images/Vecher.png",
+          oldPrice: null,
+          actualPrice: 3000000,
+          sale: false,
+          quantity: 2,
+        },
+        {
+          title: "«Сотворение Адама» Микеланджело",
+          id: 3,
+          image: "../assets/images/Adam.png",
+          oldPrice: 6000000,
+          actualPrice: 5000000,
+          sale: false,
+          quantity: 1,
+        },
+        {
+          title: "«Урок анатомии»  Рембрандт",
+          id: 4,
+          image: "../assets/images/Anatomia.png",
+          oldPrice: null,
+          actualPrice: null,
+          sale: false,
+          quantity: 0,
+        },
+      ],
+    };
+  },
+  methods: {
+    method() {
+      return console.log(this.arts);
+    },
+  },
 };
 </script>
 
@@ -20,9 +75,17 @@ export default {
   font-weight: bold;
   font-size: 24px;
   line-height: 150%;
-  margin: 0;
+  margin: 0 0 40px 0;
+  color: #343030;
 }
-.main{
-  margin-left: 145px;
+.main {
+}
+.cards {
+  width: 1280px;
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+  grid-gap: 32px;
+  grid-template-columns: repeat(4, 288px);
 }
 </style>
