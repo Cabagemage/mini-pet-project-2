@@ -6,7 +6,10 @@
         v-for="art in arts"
         :image="art.image"
         :title="art.title"
+        :oldPrice="art.oldPrice"
+        :actualPrice="art.actualPrice"
         :key="art.id"
+        :quantity="art.quantity"
       />
     </div>
     <slot></slot>
@@ -25,36 +28,36 @@ export default {
         {
           title: "«Рождение Венеры» Сандро Боттичелли",
           id: 1,
-          image: "../assets/images/Adam.png",
-          oldPrice: 2000000,
-          actualPrice: 1000000,
+          image: require("../assets/Venera.png"),
+          oldPrice: "2000000",
+          actualPrice: "1000000",
           sale: true,
-          quantity: 1,
+          quantity: 5,
         },
         {
           title: "«Тайная вечеря»  Леонардо да Винчи",
           id: 2,
-          image: "../assets/images/Vecher.png",
+          image: require("../assets/Vecher.png"),
           oldPrice: null,
-          actualPrice: 3000000,
+          actualPrice: "3000000",
           sale: false,
-          quantity: 2,
+          quantity: 6,
         },
         {
           title: "«Сотворение Адама» Микеланджело",
           id: 3,
-          image: "../assets/images/Adam.png",
-          oldPrice: 6000000,
-          actualPrice: 5000000,
+          image: require("../assets/Adam.png"),
+          oldPrice: "6000000",
+          actualPrice: "5000000",
           sale: false,
-          quantity: 1,
+          quantity: 8,
         },
         {
           title: "«Урок анатомии»  Рембрандт",
           id: 4,
-          image: "../assets/images/Anatomia.png",
-          oldPrice: null,
-          actualPrice: null,
+          image: require("../assets/Anatomia.png"),
+          oldPrice: "6000000",
+          actualPrice: "4000000",
           sale: false,
           quantity: 0,
         },
@@ -62,8 +65,9 @@ export default {
     };
   },
   methods: {
-    method() {
-      return console.log(this.arts);
+    sendData() {
+     this.someData++;
+ 
     },
   },
 };
