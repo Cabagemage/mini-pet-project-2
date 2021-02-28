@@ -17,7 +17,9 @@
         class="search__input"
       />
       {{ search }}
-      <button  v-on:click="$emit('onClick')"  class="search__button">Найти</button>
+      <button v-on:click="filterSubmit" class="search__button">
+        Найти
+      </button>
     </form>
   </header>
 </template>

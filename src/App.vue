@@ -1,5 +1,5 @@
 <template>
-  <Header @searchInput="filterSubmit" :onClick="filterSubmit" :searchTerm="searchTerm" />
+  <Header @searchInput="filterSubmit" :click="filterSubmit" :searchTerm="searchTerm" />
   <Cards>
     <Card
       v-for="art in filteredArts"
@@ -72,23 +72,23 @@ export default {
     Card,
   },
   methods: {
+    // filterSubmit(data) {
+    //   let filteredArts = this.arts.filter((art) => {
+    //     console.log(data);
+    //     return art.title.toLowerCase().includes(data.search);
+    //   });
+    //   return filteredArts;
+    // },
+  },
+  computed: {
     filterSubmit(data) {
       let filteredArts = this.arts.filter((art) => {
-        console.log(data);
+        console.log(data.search);
         return art.title.toLowerCase().includes(data.search);
       });
       return filteredArts;
     },
   },
-  // computed: {
-  //   filteredArts(data) {
-  //     let filteredArts = this.arts.filter((art) => {
-  //       console.log(data.searchTerm);
-  //       return art.title.toLowerCase().includes(data.searchTerm);
-  //     });
-  //     return filteredArts;
-  //   },
-  // },
 };
 //   // computed: {
 //   //   filteredList() {
