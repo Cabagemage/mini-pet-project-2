@@ -1,5 +1,5 @@
 <template>
-  <Header @searchInput="filterSubmit"  />
+  <Header @searchInput="filterSubmit" />
   <Cards>
     <Card
       v-for="art in filteredArts"
@@ -73,22 +73,31 @@ export default {
     filterSubmit(data) {
       this.filteredArts = this.arts.filter((art) => {
         console.log(data.search);
-        return art.title.toLowerCase().includes(this.search);
-      });
-      console.log(this.filteredArts);
+        return art.title.toLowerCase().includes(data.search);
+      }).map((data) => {
+          return {
+          title:  data.title,
+          id:  data.id,
+          image: data.image,
+          oldPrice: data.oldPrice,
+          actualPrice: data.actualPrice,
+          sale: data.sale,
+          quantity: data.quantity};
+        })
+        console.log(this.filteredArts)
       return this.filteredArts;
     },
   },
-  // computed: {
-  //   filterSubmit(data) {
-  //     this.filteredArts = this.arts.filter((art) => {
-  //       console.log(data);
-  //       return art.title.toLowerCase().includes(this.search);
-  //     });
-  //     console.log(this.filteredArts);
-  //     return this.filteredArts;
-  //   },
-  // },
+  computed: {
+    // filterSubmit(data) {
+    //   this.filteredArts = this.arts.filter((art) => {
+    //     console.log(data);
+    //     return art.title.toLowerCase().includes(this.search);
+    //   });
+    //   console.log(this.filteredArts);
+    //   return this.filteredArts;
+    // },
+  },
 };
 </script>
 
