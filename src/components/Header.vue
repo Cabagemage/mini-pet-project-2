@@ -16,7 +16,6 @@
         placeholder="Поиск по названию книги"
         class="search__input"
       />
-      {{ search }}
       <button @click="searchInput" class="search__button">
         Найти
       </button>
@@ -46,7 +45,6 @@ export default {
   methods: {
     searchInput() {
       this.$emit("searchInput", { search: this.search });
-      console.log(this.search);
     },
   },
 };

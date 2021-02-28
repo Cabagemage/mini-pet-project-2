@@ -86,6 +86,9 @@ export default {
   },
   methods: {
     filterSubmit(data) {
+      if (data.search === "") {
+        return;
+      }
       this.filteredArts = this.arts.filter((art) => {
         console.log(data.search);
         return art.title.toLowerCase().includes(data.search.toLowerCase());
