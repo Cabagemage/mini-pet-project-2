@@ -2,24 +2,19 @@
   <section class="main">
     <h1 class="title">Картины эпохи Возрождения</h1>
     <div class="cards">
-<slot></slot>
+      <slot></slot>
     </div>
   </section>
 </template>
 
 <script>
-
-
 export default {
   name: "Cards",
-  components: {  },
+  components: {},
   data() {
-    return {
-
-    };
+    return {};
   },
-  methods: {
-  },
+  methods: {},
 };
 </script>
 

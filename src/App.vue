@@ -1,6 +1,18 @@
 <template>
   <Header @searchInput="filterSubmit" />
-  <Cards>
+
+  <Cards v-if="!isSearch">
+    <Card
+      v-for="art in arts"
+      :image="art.image"
+      :title="art.title"
+      :oldPrice="art.oldPrice"
+      :actualPrice="art.actualPrice"
+      :key="art.id"
+      :quantity="art.quantity"
+    />
+  </Cards>
+  <Cards v-else-if="filteredArts">
     <Card
       v-for="art in filteredArts"
       :image="art.image"
@@ -61,6 +73,8 @@ export default {
         },
       ],
       filteredArts: [],
+      isSearch: false,
+      noArts: true,
     };
   },
   name: "App",
@@ -76,19 +90,9 @@ export default {
         console.log(data.search);
         return art.title.toLowerCase().includes(data.search.toLowerCase());
       });
-      console.log(this.filteredArts);
+      this.isSearch = true;
       return this.filteredArts;
     },
-  },
-  computed: {
-    // filterSubmit(data) {
-    //   this.filteredArts = this.arts.filter((art) => {
-    //     console.log(data.search);
-    //     return art.title.toLowerCase().includes(data.search.toLowerCase());
-    //   });
-    //   console.log(this.filteredArts);
-    //   return this.filteredArts;
-    // },
   },
 };
 </script>
