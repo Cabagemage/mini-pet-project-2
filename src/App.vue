@@ -1,5 +1,5 @@
 <template>
-  <Header @searchInput="filterSubmit" :click="filterSubmit" />
+  <Header @searchInput="filterSubmit"  />
   <Cards>
     <Card
       v-for="art in filteredArts"
@@ -72,7 +72,7 @@ export default {
   methods: {
     filterSubmit(data) {
       this.filteredArts = this.arts.filter((art) => {
-        console.log(data);
+        console.log(data.search);
         return art.title.toLowerCase().includes(this.search);
       });
       console.log(this.filteredArts);
