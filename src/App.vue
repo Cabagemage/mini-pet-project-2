@@ -1,5 +1,5 @@
 <template>
-  <Header @searchInput="filterSubmit" :click="filterSubmit" :searchTerm="searchTerm" />
+  <Header @searchInput="filterSubmit" :click="filterSubmit" />
   <Cards>
     <Card
       v-for="art in filteredArts"
@@ -10,7 +10,6 @@
       :key="art.id"
       :quantity="art.quantity"
     />
-
   </Cards>
   <Footer />
 </template>
@@ -61,7 +60,6 @@ export default {
           quantity: 0,
         },
       ],
-      searchTerm: "",
     };
   },
   name: "App",
@@ -72,33 +70,26 @@ export default {
     Card,
   },
   methods: {
-    // filterSubmit(data) {
-    //   let filteredArts = this.arts.filter((art) => {
-    //     console.log(data);
-    //     return art.title.toLowerCase().includes(data.search);
-    //   });
-    //   return filteredArts;
-    // },
-  },
-  computed: {
     filterSubmit(data) {
-      let filteredArts = this.arts.filter((art) => {
-        console.log(data.search);
-        return art.title.toLowerCase().includes(data.search);
+      this.filteredArts = this.arts.filter((art) => {
+        console.log(data);
+        return art.title.toLowerCase().includes(this.search);
       });
-      return filteredArts;
+      console.log(this.filteredArts);
+      return this.filteredArts;
     },
   },
+  // computed: {
+  //   filterSubmit(data) {
+  //     this.filteredArts = this.arts.filter((art) => {
+  //       console.log(data);
+  //       return art.title.toLowerCase().includes(this.search);
+  //     });
+  //     console.log(this.filteredArts);
+  //     return this.filteredArts;
+  //   },
+  // },
 };
-//   // computed: {
-//   //   filteredList() {
-//   //     return this.arts.filter((art) => {
-//   //       console.log(art);
-//   //       return art.title.toLowerCase().includes(this.search);
-//   //     });
-//   //   },
-//   },
-// };
 </script>
 
 <style>

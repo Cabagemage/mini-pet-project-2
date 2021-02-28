@@ -17,7 +17,7 @@
         class="search__input"
       />
       {{ search }}
-      <button v-on:click="filterSubmit" class="search__button">
+      <button @click="searchInput" class="search__button">
         Найти
       </button>
     </form>
@@ -28,12 +28,8 @@
 export default {
   name: "Header",
   components: {},
-  created: function() {
-    this.search = this.searchTerm;
-  },
   props: {
     filterSubmit: Function,
-    searchTerm: String,
   },
   data() {
     return {
