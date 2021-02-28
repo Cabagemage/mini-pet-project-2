@@ -5,18 +5,18 @@
       <h2 class="card__title">{{ title }}</h2>
       <div class="card__row">
         <div class="card__col">
-          <p class="card__price card__sale-price">{{ oldPrice ? oldPrice + ' ' + '$' : '' }}</p>
-          <p class="card__price card__actual-price">{{ actualPrice ? actualPrice  +" " + "$" : '' }}</p>
+          <p class="card__price card__sale-price">
+            {{ oldPrice ? oldPrice + " " + "$" : "" }}
+          </p>
+          <p class="card__price card__actual-price">
+            {{ actualPrice ? actualPrice + " " + "$" : "" }}
+          </p>
         </div>
-        <button
-          v-if="!isClicked"
-          @click="isClicked = !isClicked"
-          class="card__buy-button"
-        >
-          {{ addToCart }}
+        <button v-if="!isClicked" @click="addToCart" class="card__buy-button">
+          {{ buy }}
         </button>
         <button v-else class="card__buy-button card__buy-button_status_inCart">
-          {{ addToCart }}
+          {{ inCart }}
         </button>
       </div>
     </div>
@@ -40,6 +40,8 @@ export default {
   data() {
     return {
       isClicked: false,
+      buy: "Купить",
+      inCart: "В корзине",
     };
   },
   props: {
@@ -52,12 +54,18 @@ export default {
   },
   name: "Card",
   components: {},
-  computed: {
-    addToCart() {
-      if (this.isClicked) {
-        return "В корзине";
+  methods: {
+    async addToCart() {
+      this.isClicked = true;
+      try {
+        const fetchData = await fetch(
+          "https://jsonplaceholder.typicode.com/posts/1"
+        );
+        const data = await fetchData.json();
+        console.log(data);
+      } catch (e) {
+        console.log(e);
       }
-      return "Купить";
     },
   },
 };
@@ -114,6 +122,10 @@ export default {
   font-size: 14px;
   line-height: 150%;
   right: 0;
+}
+.card__buy-button:hover {
+  opacity: 0.9;
+  background-color: #403432;
 }
 .card__buy-button_status_inCart {
   background-color: #403432;

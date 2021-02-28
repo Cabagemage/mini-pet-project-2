@@ -11,8 +11,13 @@
       </nav>
     </div>
     <div class="search">
-      <input placeholder="Поиск по названию книги" class="search__input" />
-      <button class="search__button">Найти</button>
+      <input
+        v-model="search"
+        placeholder="Поиск по названию книги"
+        class="search__input"
+      />
+      {{ search }}
+      <button @click="filteredArts" class="search__button">Найти</button>
     </div>
   </header>
 </template>
@@ -21,9 +26,13 @@
 export default {
   name: "Header",
   components: {},
-
+  props: {
+    filter: Function,
+    searchTerm: String,
+  },
   data() {
     return {
+      search: this.searchTerm,
       listItems: [
         { title: "Каталог", link: "#" },
         { title: "Доставка", link: "#" },
@@ -32,6 +41,11 @@ export default {
         { title: "О галерее", link: "#" },
       ],
     };
+  },
+  methods: {
+    searchInput() {
+      this.$emit("searchInput", { search: this.search });
+    },
   },
 };
 </script>
@@ -43,7 +57,7 @@ export default {
   margin: 0 auto 45px auto;
   justify-content: space-between;
   padding: 24px 0 24px 0;
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
 }
 .nav-list {
   display: flex;
@@ -79,7 +93,6 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  margin-right: 0;
 }
 .search__input {
   width: 416px;
@@ -98,5 +111,9 @@ export default {
   font-size: 14px;
   line-height: 150%;
   right: 0;
+}
+.search__button:hover {
+  opacity: 0.8;
+  background-color: #403432;
 }
 </style>
