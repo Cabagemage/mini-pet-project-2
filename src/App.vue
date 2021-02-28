@@ -1,9 +1,5 @@
 <template>
-  <Header
-    @searchInput="filter"
-    searchTerm="searchTerm"
-    :filteredArts="filteredArts"
-  />
+  <Header @searchInput="filterSubmit" :onClick="filterSubmit" :searchTerm="searchTerm" />
   <Cards>
     <Card
       v-for="art in filteredArts"
@@ -14,6 +10,7 @@
       :key="art.id"
       :quantity="art.quantity"
     />
+
   </Cards>
   <Footer />
 </template>
@@ -74,19 +71,24 @@ export default {
     Footer,
     Card,
   },
-
-  computed: {
-    filteredArts() {
+  methods: {
+    filterSubmit(data) {
       let filteredArts = this.arts.filter((art) => {
-        console.log(this.searchTerm);
-        return art.title.toLowerCase().includes(this.searchTerm);
+        console.log(data);
+        return art.title.toLowerCase().includes(data.search);
       });
-      let orderedArts = filteredArts.sort((a, b) => {
-        return b.upvoted - a.upvoted;
-      });
-      return orderedArts;
+      return filteredArts;
     },
   },
+  // computed: {
+  //   filteredArts(data) {
+  //     let filteredArts = this.arts.filter((art) => {
+  //       console.log(data.searchTerm);
+  //       return art.title.toLowerCase().includes(data.searchTerm);
+  //     });
+  //     return filteredArts;
+  //   },
+  // },
 };
 //   // computed: {
 //   //   filteredList() {

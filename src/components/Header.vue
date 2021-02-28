@@ -10,15 +10,15 @@
         </ul>
       </nav>
     </div>
-    <div class="search">
+    <form @submit.prevent class="search">
       <input
         v-model="search"
         placeholder="Поиск по названию книги"
         class="search__input"
       />
       {{ search }}
-      <button @click="filteredArts" class="search__button">Найти</button>
-    </div>
+      <button  v-on:click="$emit('onClick')"  class="search__button">Найти</button>
+    </form>
   </header>
 </template>
 
@@ -26,13 +26,15 @@
 export default {
   name: "Header",
   components: {},
+  created: function() {
+    this.search = this.searchTerm;
+  },
   props: {
-    filter: Function,
+    filterSubmit: Function,
     searchTerm: String,
   },
   data() {
     return {
-      search: this.searchTerm,
       listItems: [
         { title: "Каталог", link: "#" },
         { title: "Доставка", link: "#" },
@@ -40,11 +42,13 @@ export default {
         { title: "Контакты", link: "#" },
         { title: "О галерее", link: "#" },
       ],
+      search: "",
     };
   },
   methods: {
     searchInput() {
       this.$emit("searchInput", { search: this.search });
+      console.log(this.search);
     },
   },
 };
