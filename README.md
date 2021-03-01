@@ -1,24 +1,6 @@
-# redsoft-test
+# mini-pet-project
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Использованный стек: Vue 3, css.
+Описание: Небольшой пет-проект (на данный момент представлен в исключительно десктоп-версии), написанный на Вью. Работает фильтрация, при нажатии на кнопку "добавить", происходит AJAX запрос к https://jsonplaceholder.typicode.com для имитации гет-запроса. Сделан из ознакомительных с фреймворком  Vue целях. 
+Что нужно улучшить: Сделать адаптив, перевести на scss. 
+Ссылка на результат: https://cabagemage.github.io/mini-pet-project-2/
