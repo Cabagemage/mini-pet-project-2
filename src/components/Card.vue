@@ -74,6 +74,8 @@ export default {
 <style>
 .card {
   width: 280px;
+  min-height: 332px;
+  font-family: 'Merriweather', 'Times New Roman', Times, serif;
   box-sizing: border-box;
   border: 1px solid #e1e1e1;
 }

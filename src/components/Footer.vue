@@ -12,11 +12,11 @@
       <div class="footer__contacts">
         <div class="footer__contact">
           <img src="../assets/phone.svg" alt="" class="footer__icon" />
-          <p>+7 (495) 555-55-55</p>
+          <p class="footer__paragraph">+7 (495) 555-55-55</p>
         </div>
         <div class="footer__contact">
           <img src="../assets/adress.svg" alt="" class="footer__icon" />
-          <p>г. Москва, ул. Расплетина, 24</p>
+          <p class="footer__paragraph">г. Москва, ул. Расплетина, 24</p>
         </div>
       </div>
     </div>
@@ -45,12 +45,13 @@ export default {
 <style scoped>
 .footer {
   max-width: 1920px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  padding: 24px 100px 24px 100px;
+  padding: 37px 100px 37px 100px;
   border-bottom: 1px solid #e1e1e1;
   background-color: #eceaea;
 }
@@ -61,18 +62,22 @@ export default {
 }
 .footer__contacts {
   display: flex;
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
   flex-direction: row;
   align-items: center;
 }
 .footer__contact {
   display: flex;
   flex-direction: row;
-
 }
-.footer__icon{
+.footer__icon {
   margin-right: 9px;
 }
-.footer__contact:first-child{
+.footer__contact:first-child {
   margin-right: 51px;
 }
 .nav-list {

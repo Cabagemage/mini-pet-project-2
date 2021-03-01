@@ -58,7 +58,7 @@ export default {
   display: flex;
   margin: 0 auto 45px auto;
   justify-content: center;
-  padding: 24px 100px 24px 100px;
+  padding: 37px 100px 37px 100px;
   border-bottom: 1px solid #e1e1e1;
 }
 .justify-between{
