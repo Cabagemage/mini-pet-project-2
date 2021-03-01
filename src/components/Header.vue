@@ -1,15 +1,14 @@
 <template>
   <header class="header">
     <div class="justify-between">
-      <img src="../assets/logo.svg" alt="" class="logo" />
       <nav class="navigation">
+        <img src="../assets/logo.svg" alt="" class="logo" />
         <ul class="nav-list">
           <li v-for="item in listItems" :key="item.title" class="nav-item">
             <a class="nav-link" href="#">{{ item.title }}</a>
           </li>
         </ul>
       </nav>
-    </div>
     <form @submit.prevent class="search">
       <input
         v-model="search"
@@ -20,6 +19,7 @@
         Найти
       </button>
     </form>
+    </div>
   </header>
 </template>
 
@@ -50,18 +50,26 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .header {
-  width: 1280px;
+  max-width: 1920px;
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   margin: 0 auto 45px auto;
-  justify-content: space-between;
-  padding: 24px 0 24px 0;
+  justify-content: center;
+  padding: 24px 100px 24px 100px;
   border-bottom: 1px solid #e1e1e1;
+}
+.justify-between{
+  display: flex;
+  width: 1920px;
+  justify-content: space-between;
 }
 .nav-list {
   display: flex;
   flex-direction: row;
+  justify-self: center;
   list-style-type: none;
   margin: 0;
 }
