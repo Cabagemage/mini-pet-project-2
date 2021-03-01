@@ -29,7 +29,6 @@ export default {
 }
 .main {
   width: 1280px;
-  font-family: "Merriweather", "Times New Roman", Times, serif;
   margin: 0 auto 320px auto;
 }
 .cards {

@@ -9,16 +9,16 @@
           </li>
         </ul>
       </nav>
-    <form @submit.prevent class="search">
-      <input
-        v-model="search"
-        placeholder="Поиск по названию книги"
-        class="search__input"
-      />
-      <button @click="searchInput" class="search__button">
-        Найти
-      </button>
-    </form>
+      <form @submit.prevent class="search">
+        <input
+          v-model="search"
+          placeholder="Поиск по названию картины"
+          class="search__input"
+        />
+        <button @click="searchInput" class="search__button">
+          Найти
+        </button>
+      </form>
     </div>
   </header>
 </template>
@@ -61,7 +61,7 @@ export default {
   padding: 37px 100px 37px 100px;
   border-bottom: 1px solid #e1e1e1;
 }
-.justify-between{
+.justify-between {
   display: flex;
   width: 1920px;
   justify-content: space-between;
@@ -71,7 +71,8 @@ export default {
   flex-direction: row;
   justify-self: center;
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 0 48px;
+  padding: 0;
 }
 .navigation {
   display: flex;
@@ -89,6 +90,9 @@ export default {
 .nav-link {
   text-decoration: none;
   color: #343030;
+}
+.nav-link:hover {
+  opacity: 0.7;
 }
 .justify-between {
   display: flex;
@@ -114,6 +118,7 @@ export default {
   height: 46px;
   background-color: #403432;
   position: absolute;
+  border: transparent;
   color: white;
   font-weight: bold;
   font-size: 14px;
@@ -124,4 +129,5 @@ export default {
   opacity: 0.8;
   background-color: #403432;
 }
+
 </style>

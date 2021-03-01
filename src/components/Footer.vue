@@ -45,7 +45,6 @@ export default {
 <style scoped>
 .footer {
   max-width: 1920px;
-  font-family: "Merriweather", "Times New Roman", Times, serif;
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
@@ -62,7 +61,6 @@ export default {
 }
 .footer__contacts {
   display: flex;
-  font-family: Merriweather;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -73,8 +71,11 @@ export default {
 .footer__contact {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .footer__icon {
+  width: 14px;
+  height: 14px;
   margin-right: 9px;
 }
 .footer__contact:first-child {
@@ -84,7 +85,8 @@ export default {
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 0 48px;;
+  padding: 0
 }
 .navigation {
   display: flex;
@@ -103,6 +105,9 @@ export default {
   text-decoration: none;
   color: #343030;
 }
+.nav-link:hover {
+  opacity: 0.7;
+}
 .justify-between {
   display: flex;
 }
@@ -110,31 +115,5 @@ export default {
   width: 48px;
   height: 48px;
 }
-.search {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.search__input {
-  width: 416px;
-  box-sizing: border-box;
-  height: 46px;
-  padding: 13px 0 14px 16px;
-  margin: 0;
-}
-.search__button {
-  width: 122px;
-  height: 46px;
-  background-color: #403432;
-  position: absolute;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 150%;
-  right: 0;
-}
-.search__button:hover {
-  opacity: 0.8;
-  background-color: #403432;
-}
+
 </style>

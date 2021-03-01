@@ -75,9 +75,11 @@ export default {
 .card {
   width: 280px;
   min-height: 332px;
-  font-family: "Merriweather", "Times New Roman", Times, serif;
   box-sizing: border-box;
   border: 1px solid #e1e1e1;
+}
+.card:hover{
+  transform: scale(1.2)
 }
 .card_status_sold {
   background-color: #ffffff;
@@ -85,7 +87,7 @@ export default {
 }
 .card__price {
   margin: 0;
-  font-family: "Merriweather", "Times New Roman", Times, serif;
+
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -123,7 +125,10 @@ export default {
 .card__buy-button {
   width: 118px;
   height: 48px;
+  box-sizing: border-box;
   background-color: #382e2b;
+  border: transparent;
+  border-radius: 5px;
   color: white;
   font-weight: bold;
   font-size: 14px;
@@ -135,9 +140,9 @@ export default {
   background-color: #403432;
 }
 .card__buy-button_status_inCart {
-  background-color: #403432;
+  background-color: #5B3A32;;
   background-image: url(../assets/feather_check.svg);
   background-repeat: no-repeat;
-  background-position: center left 2%;
+  background-position: center left 1%;
 }
 </style>
