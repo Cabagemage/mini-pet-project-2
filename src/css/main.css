@@ -1,6 +1,6 @@
 #app {
   max-width: 100%;
-  font-family: "Merriweather", "Lato", "Arial", sans-serif;
+  font-family: Merriweather, "Lato", "Arial", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;

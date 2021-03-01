@@ -101,7 +101,6 @@ export default {
 </script>
 
 <style>
-
 body {
   height: 100%;
   margin: 0 auto;

@@ -75,7 +75,7 @@ export default {
 .card {
   width: 280px;
   min-height: 332px;
-  font-family: 'Merriweather', 'Times New Roman', Times, serif;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
   box-sizing: border-box;
   border: 1px solid #e1e1e1;
 }
@@ -85,6 +85,11 @@ export default {
 }
 .card__price {
   margin: 0;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
 }
 .card__image {
   width: 280px;
